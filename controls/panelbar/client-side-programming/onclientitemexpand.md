@@ -37,7 +37,27 @@ The event handler receives two parameters:
 </telerik:radpanelbar>
 ````
 
+Note that even though **OnClientItemExpand** occurs after click event is queued, it will fire before the panel item is expanded. Content in panel item will not be available to the event handler. In the case where the event handler needs to access panel content after the item is expanded, execute code using setTimeout with an appropriate delay for the panel item to expand. The example below shows an approach to ensuring the content of a panel item is scrolled into view after the item is expanded.
 
+````ASPNET
+<script>
+    function OnClientItemExpand(sender, args) {
+        window.setTimeout(ScrollToItem, 500);
+    }           
+    function ScrollToItem() {
+        document.getElementById("RadPanelBar1Bottom").scrollIntoView();
+    }
+</script>
+<telerik:radpanelbar id="RadPanelBar1" runat="server" onclientitemexpand="OnClientItemExpand">
+  <Items>
+    <telerik:radpanelitem id="RadPanelItem1" runat="server">
+      <ContentTemplate>
+        ...
+        <div id="RadPanelBar1Bottom></div>
+      </ContentTemplate>
+    </telerik:radpanelitem>
+</telerik:radpanelbar>
+````
 
 # See Also
 
