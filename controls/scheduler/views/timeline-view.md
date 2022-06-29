@@ -32,7 +32,7 @@ The **Timeline View** allows you to display a variable number of slots and defin
 
 **Timeline View** will provide full support for Resource and Date grouping, namely:
 
-* No groping (Basic look)![scheduer-views-timelineview-nogrouping](images/scheduer-views-timelineview-nogrouping.png)
+* No grouping (Basic look)![scheduer-views-timelineview-nogrouping](images/scheduer-views-timelineview-nogrouping.png)
 
 * Grouped by Resource (**Horizontal**)![scheduler-views-timelineview-horizontalgroupingbyresource](images/scheduler-views-timelineview-horizontalgroupingbyresource.png)
 
